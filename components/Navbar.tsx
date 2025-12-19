@@ -8,7 +8,7 @@ export const Navbar: React.FC = () => {
 
     // Theme Configuration
     const bgClass = isStudio ? 'bg-[#1e1e1e]/90 backdrop-blur-md border-b border-gray-800' : 'bg-white/90 backdrop-blur-md shadow-sm';
-    const textClass = isStudio ? 'text-gray-100' : 'text-[#003B5C]'; // Solutto Dark Blue
+    const textClass = isStudio ? 'text-gray-100' : 'text-[#003B5C]'; 
     const hoverClass = isStudio ? 'hover:text-blue-400' : 'hover:text-teal-500';
     const buttonClass = isStudio 
         ? 'bg-blue-600 hover:bg-blue-700 text-white' 
@@ -21,13 +21,7 @@ export const Navbar: React.FC = () => {
                     
                     {/* Logo Section */}
                     <Link to="/" className="flex items-center gap-2 group">
-                        <div className="relative w-10 h-10 flex items-center justify-center rounded-lg overflow-hidden">
-                            {/* Simple CSS Logo representation similar to Solutto */}
-                            <div className={`absolute inset-0 ${isStudio ? 'bg-gradient-to-tr from-gray-800 to-black' : 'bg-[#003B5C]'}`}></div>
-                            <span className="relative text-2xl font-bold text-white">S</span>
-                            {/* Logo "S" curve/stripes hint */}
-                            <div className="absolute top-0 right-0 w-4 h-4 bg-teal-400 rounded-bl-full opacity-80"></div>
-                        </div>
+                        <img src="../assets/images/logo.png" alt="Solutto Recorder" className="relative w-10 h-10 flex items-center justify-center" />
                         <div className="flex flex-col">
                             <span className={`font-bold text-xl leading-none tracking-tight ${textClass}`}>
                                 Solutto
@@ -41,25 +35,18 @@ export const Navbar: React.FC = () => {
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-8">
                         <Link to="/" className={`font-medium transition-colors ${location.pathname === '/' ? (isStudio ? 'text-white' : 'text-teal-600') : (isStudio ? 'text-gray-400' : 'text-gray-500')} ${hoverClass}`}>
-                            Gravador
+                            Recorder
                         </Link>
                         <Link to="/studio" className={`font-medium transition-colors ${location.pathname === '/studio' ? 'text-blue-400' : (isStudio ? 'text-gray-400' : 'text-gray-500')} ${hoverClass}`}>
-                            Studio Pro
+                            Studio
                         </Link>
                         
                         {/* Conditional Action Button */}
                         <button className={`px-5 py-2.5 rounded-full font-semibold text-sm transition-all transform hover:scale-105 shadow-lg flex items-center gap-2 ${buttonClass}`}>
-                            {isStudio ? (
-                                <>
-                                    <span>Acessar Studio</span>
-                                    <i className="fa-solid fa-wand-magic-sparkles"></i>
-                                </>
-                            ) : (
-                                <>
-                                    <span>Adicionar ao Chrome</span>
-                                    <i className="fa-brands fa-chrome"></i>
-                                </>
-                            )}
+                            <a href="https://chromewebstore.google.com/detail/pinkdfghepfkmnimdkcbbifhimkipdlp/" target="_blank" className="flex items-center gap-3">
+                                <span>Adicionar ao Chrome</span>
+                                <i className="fa-brands fa-chrome"></i>
+                            </a>
                         </button>
                     </div>
 

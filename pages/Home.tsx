@@ -31,24 +31,32 @@ const features: Feature[] = [
 
 const changelogData: ChangelogItem[] = [
     {
-        version: "v2.1.0",
-        date: "15/10/2023",
+        version: "v3.1.0",
+        date: "25/12/2025",
         type: "major",
-        changes: ["Novo design do editor rápido", "Integração aprimorada com Google Drive API v3"]
+        changes: ["Reestruturação completa + Solutto Studio", "Reestruturação do código, repaginação visual, melhoria de fluxo e lançamento do Solutto Studio."]
     },
     {
-        version: "v2.0.4",
-        date: "01/09/2023",
+        version: "v3.0.5",
+        date: "10/04/2025",
         type: "patch",
-        changes: ["Correção de bug na captura de áudio do sistema", "Melhoria na performance de encoding WEBM"]
+        changes: ["Correções de UX e transcode", "Correções e melhorias na interface, correção de bugs e fluxo."]
     },
     {
-        version: "v2.0.0",
-        date: "10/08/2023",
+        version: "v3.0.3",
+        date: "26/03/2025",
         type: "major",
-        changes: ["Lançamento da integração com Solutto Studio", "Suporte a gravação em 4K"]
+        changes: ["Atualização da versão base", "Diversas correções, melhorias e atualizações."]
+    },
+    {
+        version: "v1.0.0",
+        date: "19/03/2025",
+        type: "major",
+        changes: ["Lançamento do Solutto Recorder", "Gravação de tela e webcam, edição simples e upload para Google Drive."]
     }
 ];
+
+const latestVersion = changelogData[0].version.replace("v", "");
 
 const Home: React.FC = () => {
     const [showChangelog, setShowChangelog] = useState(false);
@@ -78,9 +86,11 @@ const Home: React.FC = () => {
                             </p>
                             
                             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                                <button className="px-8 py-4 bg-[#003B5C] hover:bg-[#002a42] text-white text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center gap-3">
-                                    <i className="fa-brands fa-chrome text-2xl"></i>
-                                    Adicionar ao Chrome
+                                <button className="px-8 py-4 bg-[#003B5C] hover:bg-[#002a42] text-white text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center">
+                                    <a href="https://chromewebstore.google.com/detail/pinkdfghepfkmnimdkcbbifhimkipdlp/" target="_blank" className="flex items-center gap-3">
+                                        <i className="fa-brands fa-chrome text-2xl"></i>
+                                        Adicionar ao Chrome
+                                    </a>
                                 </button>
                                 <button 
                                     onClick={() => setShowChangelog(true)}
@@ -91,9 +101,15 @@ const Home: React.FC = () => {
                                 </button>
                             </div>
                             <div className="mt-6 text-sm text-gray-500 flex items-center justify-center lg:justify-start gap-4">
-                                <span className="flex items-center gap-1"><i className="fa-solid fa-star text-yellow-400"></i> 4.9/5 Avaliação</span>
+                                <span className="flex items-center gap-1">
+                                    <i className="fa-solid fa-star text-yellow-400"></i>&nbsp;
+                                    Versão {latestVersion}
+                                </span>
                                 <span>•</span>
-                                <span>10k+ Usuários</span>
+                                <span>
+                                    <i className="fa-solid fa-ban text-red-400"></i>&nbsp;
+                                    Sem Anúncios
+                                </span>
                             </div>
                         </div>
 
@@ -108,7 +124,7 @@ const Home: React.FC = () => {
                                     <div className="ml-4 bg-white flex-1 h-5 rounded-md text-xs flex items-center px-2 text-gray-400">solutto.com.br</div>
                                 </div>
                                 <img 
-                                    src="https://picsum.photos/800/500?grayscale" 
+                                    src="../assets/images/print-solutto.png" 
                                     alt="Solutto Recorder Interface" 
                                     className="w-full h-auto rounded-b-lg opacity-90"
                                 />
@@ -248,7 +264,7 @@ const Home: React.FC = () => {
                                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center font-bold text-lg">2</div>
                                     <div>
                                         <h4 className="font-bold text-xl mb-1">Edite no Navegador</h4>
-                                        <p className="text-blue-100 text-sm">Assim que parar, o vídeo abre no editor instantâneo. Corte o início e o fim em segundos.</p>
+                                        <p className="text-blue-100 text-sm">Assim que parar, o vídeo abre no editor instantâneo. Corte o início e o fim em segundos se desejar.</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-4">
@@ -303,9 +319,9 @@ const Home: React.FC = () => {
                     </div>
 
                     <Link to="/studio" className="block relative mt-4 opacity-90 max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-gray-900 group cursor-pointer hover:opacity-100 transition-opacity">
-                         <img src="https://picsum.photos/1000/400?grayscale&blur=2" alt="Studio Teaser" className="w-full transform group-hover:scale-105 transition-transform duration-700" />
+                         <img src="../assets/images/print-studio.png" alt="Studio Teaser" className="w-full transform group-hover:scale-105 transition-transform duration-700" />
                          <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
-                            <span className="text-white font-bold text-lg tracking-widest border border-white px-4 py-2 uppercase bg-black/20 backdrop-blur-sm">Modo Dark Premium</span>
+                            <span className="text-white font-bold text-lg tracking-widest border border-white px-4 py-2 uppercase bg-black/20 backdrop-blur-sm">Estúdio Profissional</span>
                          </div>
                     </Link>
                 </div>

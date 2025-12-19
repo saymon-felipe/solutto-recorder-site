@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom'; // Importação do Link adicionada
 
 export const Footer: React.FC = () => {
     const location = useLocation();
@@ -15,29 +15,29 @@ export const Footer: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="col-span-1 md:col-span-2">
                         <div className="flex items-center gap-2 mb-4">
-                            <span className="text-2xl font-bold">Solutto</span>
+                            <img src="../assets/images/logo_solutto_branco.png" alt="Solutto" />
                         </div>
                         <p className={`max-w-sm ${mutedClass}`}>
-                            Tecnologia especializada em franquias e soluções digitais.
-                            Simplificando a comunicação visual e a gestão.
+                            Software ERP especializado em franquias e redes
                         </p>
                     </div>
                     
                     <div>
                         <h3 className="font-bold text-lg mb-4">Produtos</h3>
                         <ul className={`space-y-2 ${mutedClass}`}>
-                            <li><a href="#" className="hover:text-white transition">Recorder Extension</a></li>
-                            <li><a href="#" className="hover:text-white transition">Solutto Studio</a></li>
-                            <li><a href="#" className="hover:text-white transition">ERP Franquias</a></li>
+                            <li><Link to="/" className="hover:text-white transition">Solutto Recorder</Link></li>
+                            <li><Link to="/studio" className="hover:text-white transition">Solutto Studio</Link></li>
+                            <li><a href="https://solutto.com.br" rel="noopener" target="_blank" className="hover:text-white transition">ERP Para Franquias</a></li>
                         </ul>
                     </div>
 
                     <div>
                         <h3 className="font-bold text-lg mb-4">Legal</h3>
                         <ul className={`space-y-2 ${mutedClass}`}>
-                            <li><a href="#" className="hover:text-white transition">Privacidade</a></li>
-                            <li><a href="#" className="hover:text-white transition">Termos de Uso</a></li>
-                            <li><a href="#" className="hover:text-white transition">Suporte</a></li>
+                            {/* Mudança crítica abaixo: de <a> para <Link> */}
+                            <li><Link to="/privacy" className="hover:text-white transition">Privacidade</Link></li>
+                            <li><Link to="/terms" className="hover:text-white transition">Termos de Uso</Link></li>
+                            <li><Link to="/support" className="hover:text-white transition">Suporte</Link></li>
                         </ul>
                     </div>
                 </div>
