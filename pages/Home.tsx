@@ -124,7 +124,7 @@ const Home: React.FC = () => {
                                     <div className="ml-4 bg-white flex-1 h-5 rounded-md text-xs flex items-center px-2 text-gray-400">solutto.com.br</div>
                                 </div>
                                 <img 
-                                    src="../assets/images/print-solutto.png" 
+                                    src="/assets/images/print-solutto.png" 
                                     alt="Solutto Recorder Interface" 
                                     className="w-full h-auto rounded-b-lg opacity-90"
                                 />
@@ -319,7 +319,7 @@ const Home: React.FC = () => {
                     </div>
 
                     <Link to="/studio" className="block relative mt-4 opacity-90 max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-gray-900 group cursor-pointer hover:opacity-100 transition-opacity">
-                         <img src="../assets/images/print-studio.png" alt="Studio Teaser" className="w-full transform group-hover:scale-105 transition-transform duration-700" />
+                         <img src="/assets/images/print-studio.png" alt="Studio Teaser" className="w-full transform group-hover:scale-105 transition-transform duration-700" />
                          <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
                             <span className="text-white font-bold text-lg tracking-widest border border-white px-4 py-2 uppercase bg-black/20 backdrop-blur-sm">Estúdio Profissional</span>
                          </div>

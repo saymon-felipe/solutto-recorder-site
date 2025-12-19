@@ -21,7 +21,7 @@ export const Navbar: React.FC = () => {
                     
                     {/* Logo Section */}
                     <Link to="/" className="flex items-center gap-2 group">
-                        <img src="../assets/images/logo.png" alt="Solutto Recorder" className="relative w-10 h-10 flex items-center justify-center" />
+                        <img src="/assets/images/logo.png" alt="Solutto Recorder" className="relative w-10 h-10 flex items-center justify-center" />
                         <div className="flex flex-col">
                             <span className={`font-bold text-xl leading-none tracking-tight ${textClass}`}>
                                 Solutto
